@@ -341,7 +341,7 @@ Future<void> fetchDownloadUris(Multihash hash) async {
   html += '// fetched from $debugHttpApiBaseUrl</pre>';
 
 // <code class="language-lua"> </code>
-  // addCard(html);
+  addCard(html);
   highlightAll();
 }
 
@@ -399,8 +399,7 @@ dynamic getChildrenLocal(String? id) {
     list.add({
       'id': filename,
       'label': basename + ' (${filesize(item['len'])})',
-      'link':
-          isDirectory ? '${cidBaseHost}/$filename' : currentStaticCID,
+      'link': isDirectory ? '$cidBaseHost/$filename' : currentStaticCID,
       'icon': {
         // TODO 'src': ${detectIcon(basename, isDirectory: false)}.sv
       }
